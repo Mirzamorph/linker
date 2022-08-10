@@ -1,13 +1,15 @@
 import classNames from "classnames";
-import { FC } from "react";
+import { memo } from "react";
 
 interface Props {
   children: string;
   className?: string;
 }
 
-const Description: FC<Props> = ({ children, className }) => {
-  return <div className={classNames(className, "text-center")}>{children}</div>;
-};
+const Description = memo<Props>(({ children, className }) => {
+  return (
+    <p className={classNames(className, "text-center break-all")}>{children}</p>
+  );
+});
 
 export default Description;

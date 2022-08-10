@@ -1,27 +1,16 @@
+import Constructor from "components/constructor/Constructor";
+import Preview from "components/preview/Preview";
 import type { GetStaticProps, NextPage } from "next";
-import Avatar from "../ui/avatar/Avatar";
-import Description from "../ui/description/Description";
-import LinkItem from "../ui/link-item/LinkItem";
-import LinkList from "../ui/link-list/LinkList";
-import Name from "../ui/name/Name";
+import BasicLayout from "ui/layout/BasicLayout";
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen bg-gradient-to-b from-purple-500 to-pink-500">
-      <div className="flex items-center flex-col w-full px-4 max-w-[675px] mx-auto py-10 text-white box-content">
-        <Avatar />
-        <Name className="mt-4">@mirzamorph</Name>
-        <Description>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        </Description>
-        <LinkList className="mt-8">
-          <LinkItem title="Some link 1" url="https://yandex.ru" />
-          <LinkItem title="Some link 2" url="https://yandex.ru" />
-          <LinkItem title="Some link 3" url="https://yandex.ru" />
-          <LinkItem title="Some link 4" url="https://yandex.ru" />
-        </LinkList>
+    <BasicLayout className="bg-slate-100">
+      <div className="grid grid-cols-2 h-full">
+        <Constructor />
+        <Preview />
       </div>
-    </div>
+    </BasicLayout>
   );
 };
 

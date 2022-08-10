@@ -1,3 +1,15 @@
 .btn {
-  @apply inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+  @apply inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white hover:opacity-80 active:opacity-70 transition-opacity;
+}
+
+.gradient {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.pink {
+  @apply bg-pink-500;
+}
+
+.indigo {
+  @apply bg-indigo-500;
 }
