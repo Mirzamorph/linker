@@ -58,11 +58,11 @@ export const useChangeBlockField = <T extends BlockType>(block: T) => {
     (
       fieldName: keyof T | keyof T["meta"],
       fieldValue: T[keyof T] | T["meta"][keyof T["meta"]],
-      isMeta = false
+      isMetaField = false
     ) => {
       let newBlock = block;
 
-      if (isMeta) {
+      if (isMetaField) {
         newBlock = {
           ...block,
           meta: {

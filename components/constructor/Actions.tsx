@@ -1,13 +1,23 @@
+import classNames from "classnames";
 import { memo } from "react";
 import { useAddHeadlineBlock, useAddLinkBlock } from "store/block/hooks";
 import Button from "ui/button/Button";
 
-const Actions = memo(() => {
+interface Props {
+  className?: string;
+}
+
+const Actions = memo<Props>(({ className }) => {
   const addLink = useAddLinkBlock();
   const addHeadline = useAddHeadlineBlock();
 
   return (
-    <div className="flex gap-x-3">
+    <div
+      className={classNames(
+        "grid grid-flow-col auto-cols-max gap-x-3 overflow-x-auto pb-4",
+        className
+      )}
+    >
       <Button variant="indigo" onClick={addLink}>
         Add a link
       </Button>

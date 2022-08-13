@@ -9,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-const Input = memo<Props>(
+const TextInput = memo<Props>(
   ({ label, value, placeholder, onChange, className }) => {
     return (
       <div>
@@ -39,4 +39,4 @@ const Input = memo<Props>(
   }
 );
 
-export default Input;
+export default TextInput;

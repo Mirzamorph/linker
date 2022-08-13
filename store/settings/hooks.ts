@@ -1,8 +1,10 @@
 import { useAppDispatch, useAppSelector } from "store/hooks";
-import { setDescription, setName } from "./settingsSlice";
+import { setAvatar, setDescription, setName } from "./settingsSlice";
 
 export const useSettingsCredentials = () => {
-  const { name, description } = useAppSelector((state) => state.settings);
+  const { name, description, avatar } = useAppSelector(
+    (state) => state.settings
+  );
   const dispatch = useAppDispatch();
 
   const onChangeName = (name: string) => {
@@ -11,11 +13,16 @@ export const useSettingsCredentials = () => {
   const onChangeDescription = (description: string) => {
     dispatch(setDescription(description));
   };
+  const onChangeAvatar = (avatar: string) => {
+    dispatch(setAvatar(avatar));
+  };
 
   return {
     name,
     description,
+    avatar,
     onChangeName,
     onChangeDescription,
+    onChangeAvatar,
   };
 };

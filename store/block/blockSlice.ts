@@ -26,6 +26,6 @@ export const blockSlice = createSlice({
   },
 });
 
-export const { addBlock, setBlocks,changeBlockField } = blockSlice.actions;
+export const { addBlock, setBlocks, changeBlockField } = blockSlice.actions;
 
 export default blockSlice.reducer;

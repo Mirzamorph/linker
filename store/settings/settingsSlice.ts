@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface SettingsStore {
   name: string;
   description: string;
+  avatar: string;
 }
 
 const initialState: SettingsStore = {
   name: "mirzamorph",
   description: "Lorem ipsum dolor sit amet consectetur.",
+  avatar: "",
 };
 
 export const settingsSlice = createSlice({
@@ -20,9 +22,12 @@ export const settingsSlice = createSlice({
     setDescription: (state, action: PayloadAction<string>) => {
       state.description = action.payload;
     },
+    setAvatar: (state, action: PayloadAction<string>) => {
+      state.avatar = action.payload;
+    },
   },
 });
 
-export const { setName, setDescription } = settingsSlice.actions;
+export const { setName, setDescription, setAvatar } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

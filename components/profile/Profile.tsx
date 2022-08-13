@@ -11,15 +11,16 @@ import Name from "ui/name/Name";
 interface Props {
   name: string;
   description: string;
+  avatar?: string;
   blocks: BlocksType;
 }
 
-const Profile: FC<Props> = ({ name, description, blocks }) => {
+const Profile: FC<Props> = ({ name, description, avatar, blocks }) => {
   if (!name) return null;
 
   return (
     <ProfileLayout>
-      <Avatar letter={name[0]} />
+      <Avatar letter={name[0]} imgSrc={avatar} />
       <Name className="mt-4">{name}</Name>
       <Description>{description}</Description>
       <BlockList className="mt-8">
